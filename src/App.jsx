@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import WeatherDisplay from "./Components/WeatherDisplay";
 import SearchSection from "./Components/SearchSection";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTelegram, faGithub } from "@fortawesome/free-brands-svg-icons";
+import Footer from "./Components/Footer";
 
 export default function App() {
   const [showSecondSection, setShowSecondSection] = useState(false);
@@ -25,11 +24,10 @@ export default function App() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        // Customize the error message based on the API response
         if (errorData.message.includes("not found")) {
           throw new Error("Location not found");
         }
-        throw new Error(errorData.message); // Fallback for other error messages
+        throw new Error(errorData.message); 
       }
 
       const data = await response.json();
@@ -37,7 +35,7 @@ export default function App() {
       setShowSecondSection(true);
     } catch (err) {
       setError(err.message);
-      setWeatherData(null); // Reset weather data on error
+      setWeatherData(null); 
       setShowSecondSection(false);
     }
   };
@@ -65,10 +63,10 @@ export default function App() {
           const data = await response.json();
           setWeatherData(data);
           setShowSecondSection(true);
-          setError(""); // Clear error on successful fetch
+          setError(""); 
         } catch (err) {
           setError(err.message);
-          setWeatherData(null); // Reset weather data on error
+          setWeatherData(null);
           setShowSecondSection(false);
         }
       },
@@ -105,44 +103,9 @@ export default function App() {
             <WeatherDisplay weatherData={weatherData} error={error} />
           )}
           {error && <p className="text-red-600">{error}</p>}{" "}
-          {/* Display error message */}
         </div>
       </section>
-      <footer className="w-full h-12 bg-transparent backdrop-blur-[5px] flex justify-evenly items-center">
-        <p className="text-white">Made with ❤️</p>
-        <p className="text-white">
-          © 2024 Nati&apos;s Weather App. All rights reserved.
-        </p>
-        <ul className="flex justify-center items-center gap-2">
-          <li>
-            <a
-              href="https://t.me/Nathnael_G"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                icon={faTelegram}
-                className=" text-white"
-                size="2x"
-              />
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://github.com/Nathnael-G/Nati-s-Weather-App"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="text-white"
-                size="2x"
-              />
-            </a>
-          </li>
-        </ul>
-      </footer>
+      <Footer />
     </>
   );
 }

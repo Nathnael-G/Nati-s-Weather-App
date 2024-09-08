@@ -24,6 +24,27 @@ input:focus ~ label {
     transform: translateY(0%);
     opacity: 1;
   }
+  .social-icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .social-icon:hover .fa-github {
+    color: #6e5494;
+    border-color: #6e5494;
+  }
+  
+  .social-icon:hover .fa-telegram {
+    color: #0088cc;
+  }
+  .social-icon:hover .fa-linkedin {
+    color: #0077b5; /* LinkedIn brand color */
+  }
+  
   /* For WebKit-based browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 8px; /* Width of the scrollbar */
