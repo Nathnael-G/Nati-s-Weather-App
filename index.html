@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get accurate weather information for your location with Nati's Weather App. Check current temperature, humidity, and more. Created with vite@latest and openWeatherMap.">
+    <meta property="og:title" content="Nati's Weather App">
+    <meta property="og:description" content="Get accurate weather information for your location with Nati's Weather App. Check current temperature, humidity, and more.">
+    <meta property="og:image" content="/img.jpg">
+    <meta property="og:url" content="https://your-app-url.com">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+<meta property="og:site_name" content="Nati's Weather App">
+
+    <title>Nati's Weather App - Accurate Weather Forecasts for Your Location</title>
+    <style>
+      body{
+    font-family: sans-serif;
+
+    background: url("/img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Nati's Weather App",
+        "description": "Get accurate weather information for your location with Nati's Weather App. Check current temperature, humidity, and more.",
+        "image": "/img.jpg",
+        "url": "https://natis-weatherapp.netlify.com",
+        "applicationCategory": "Weather",
+        "operatingSystem": "Web"
+      }
+      </script>
+      
+  </body>
+</html>

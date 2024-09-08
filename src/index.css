@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  @apply box-border px-0 mx-0;
+  font-family: 'poppins', sans-serif;
+}
+input:focus ~ label {
+    @apply -translate-y-8;
+    @apply -translate-x-6;
+  }
+
+  .second-section {
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .second-section.show {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  /* For WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Make the scrollbar thinner */
+  scrollbar-color: rgba(255, 255, 255) transparent; /* Thumb color and track color */
+}
